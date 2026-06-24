@@ -1,9 +1,9 @@
 {
-  "short_name": "StrandBegleiter",
-  "name": "StrandBegleiter",
-  "description": "Geistlicher StrandBegleiter.",
+  "short_name": "PredigtMinaturen",
+  "name": "PredigtMinaturen",
+  "description": "PredigtMiniaturen",
   "lang": "de",
-  "id": "/geistlicher-strandbegleiter",
+  "id": "/Kirchentagebuch",
   "icons": [
     {
       "src": "icon-192.png",
