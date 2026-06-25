@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PredigtMiniatur</title>
+    <title>Predigt·Miniaturen</title>
     
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#2F5496"> 
     <link rel="apple-touch-icon" href="icon-192.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="PredigtMiniatur">
+    <meta name="apple-mobile-web-app-title" content="Predigtminiatur">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="apple-touch-icon" href="icon-180.png">
     <link rel="icon" href="icon-192.png" type="image/png">
@@ -65,61 +65,7 @@
             text-align: center;
             text-transform: uppercase;
         }
-        
-        /* === DYNAMISCHER IMPULS BEREICH === */
-         .impuls-box {
-            width: 100%;
-            max-width: 420px; /* Kompakter gedeckelt */
-            background-color: var(--bg);  
-            border: 1px solid rgba(122, 92, 46, 0.3); /* Etwas deutlicherer Goldrand für Kontrast */
-            border-radius: 6px;
-            padding: 10px 10px; /* Kompakterer Innenabstand */
-            text-align: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-            margin: 0 auto;
-        }
-        
 
-        .impuls-date {
-            font-size: 16px;
-            color: var(--gold);
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .impuls-title {
-            font-size: 17px; /* Minimal verkleinert */
-            color: #A42A04;
-            font-weight: 700;
-            margin-bottom: 5px; /* Abstand reduziert */
-            text-transform: uppercase;
-        }
-
-        .impuls-content {
-            font-size: 16px; /* Minimal verkleinert */
-            line-height: 1.5;
-            margin-bottom: 6px; /* Abstand reduziert */
-        }
-
-        .impuls-link {
-            display: inline-block;
-            background-color: #A42A04;
-            color: var(--bg);
-            text-decoration: none;
-            padding: 8px 20px; /* Button flacher gestaltet */
-            font-family: 'Cinzel', serif;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            border-radius: 4px;
-            transition: background 0.2s;
-        }
-
-        .impuls-link:active {
-            background-color: #5E4622;
-        }
-
-        /* Cover Bild mit Text-Overlay */
         .cover {
             position: relative;
             width: 100%;
@@ -134,7 +80,7 @@
 
         .cover p {
             position: absolute;
-            top: 15%;
+            top: 25%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 85%;
@@ -151,7 +97,57 @@
             text-align: center;
         }
 
-        /* === RESPONSIVE 2-Spalten Navigation === */
+        /* === DYNAMISCHER IMPULS BEREICH === */
+        .impuls-box {
+            width: 100%;
+            background-color: #ffffff;
+            border: 1px solid rgba(122, 92, 46, 0.2);
+            border-radius: 6px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .impuls-date {
+            font-size: 14px;
+            color: var(--gold);
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .impuls-title {
+            font-size: 18px;
+            color: #A42A04; /* Geändert für Kurztitel */
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .impuls-content {
+            font-size: 16.5px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .impuls-link {
+            display: inline-block;
+            background-color: #A42A04; /* Geändert für Button-Hintergrund */
+            color: var(--bg);
+            text-decoration: none;
+            padding: 12px 25px;
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .impuls-link:active {
+            background-color: #5E4622;
+        }
+
+          /* === RESPONSIVE 2-Spalten Navigation === */
         .nav-grid {
             width: 100%;
             display: grid;
@@ -175,19 +171,19 @@
             line-height: 1.25;
         }
 
-        .nav-item:active {
-            transform: scale(0.98);
-            background-color: #5E4622;
-        }
-
         .nav-item.impressum {
+            display: block;
+            text-align: center;
             background-color: var(--gold); 
+            color: var(--bg);
+            text-decoration: none;
             padding: 12px 20px;
             font-size: 15px;
-            grid-column: 1 / -1;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
         }
         
-        /* APP BUTTON */
         .install-inline {
             display: none;
             background: none;
@@ -224,7 +220,6 @@
             text-align: center;
             font-size: 14.5px;
             line-height: 1.65;
-            font-family: 'Times New Roman', Times, serif;
         }
         .ios-hint-box strong {
             color: var(--gold);
@@ -243,51 +238,40 @@
             cursor: pointer;
         }
 
-        .nav-item.handgepaeck {
-            background-color: var(--dark);
-        }
-
-        @media (max-width: 440px) {
-            .nav-grid {
-                grid-template-columns: 1fr;
-            }
-            .nav-item {
-                padding: 15px 20px;
-                font-size: 16px;
-            }
-        }
-          
         footer img {
             max-width: 120px;
             height: auto;
             margin-top: 15px;
         }
-
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Predigt · Miniatur</h1>
+        <h1>Predigt · Miniaturen</h1>
         
         <div class="cover">
             <img src="Cover.jpg" alt="Cover">
-            <p>Ein geistlicher StrandBegleiter und PredigtMiniaturen jeden Sonntag neu.</p>
+            <p>aus den Kaiserbädern<br>auf Usedom</p>
         </div>
-
+        
+        <div class="text-red-caps" style="font-size: 150%; text-align: center;">
+            <b>Kaiser·Bäder·Kirche</b>
+        </div>
+        
         <p class="intro">
-            Wenn Du in den Kaiserbädern unterwegs bist, klicke auf den jeweiligen Ort.  
-            <button id="installBtn" class="install-inline" type="button" hidden>(Auch als App für jeden Sonntag.)</button>
+            Als App für jeden Sonntag:
+            <button id="installBtn" class="install-inline" type="button" hidden>(Hier zum Homescreen hinzufügen.)</button>
         </p>
 
         <div id="impulsBereich" class="impuls-box">
             <div id="impulsDatum" class="impuls-date">Bitte warten...</div>
-            <div id="impulsTitel" class="impuls-title">Predigtminiatur wird geladen</div>
-            <div id="impulsText" class="impuls-content">Ein besinnlicher Moment</div>
+            <div id="impulsTitel" class="impuls-title">Impuls wird geladen</div>
+            <div id="impulsText" class="impuls-content">Hier erscheint gleich der aktuelle Sonntagsgruß.</div>
             <a id="impulsLink" href="#" class="impuls-link">Weiterlesen</a>
         </div>
 
         <nav class="nav-grid">
-            <a href="ferientheologie.html" class="nav-item handgepaeck">Feriensegen</a>
+           <a href="ferientheologie.html" class="nav-item handgepaeck">Feriensegen</a>
             <a href="promenade.html" class="nav-item">Promenade</a>
             <a href="strandkorb.html" class="nav-item">Strandkorb</a>
             <a href="strand.html" class="nav-item">Am Strand</a>
@@ -296,15 +280,13 @@
             <a href="bernstein.html" class="nav-item">Bernstein</a>
             <a href="seebruecke.html" class="nav-item">Seebrücke</a>
             <a href="schiffe.html" class="nav-item">Schiffe</a>
-            <a href="glaubetogo.html" class="nav-item handgepaeck">Handgepäck</a>
+           <a href="glaubetogo.html" class="nav-item handgepaeck">Handgepäck</a>
    
             <a href="kontakt.html" class="nav-item impressum">Kontakt</a>
-       </nav>
+        </nav>
 
         <footer>
-            <a href="pfeife.html" class="secret-link">
-                <img src="siegel.png" alt="Siegel">
-            </a> 
+            <img src="siegel.png" alt="Siegel">
         </footer>
     </div>
 
@@ -321,6 +303,8 @@
 
     <script>
     (function () {
+        // 1. DATENBANK FÜR DEINE SONNTAGE (Hier einfach erweitern/anpassen!)
+        // WICHTIG: Das Datum im Format "YYYY-MM-DD" eintragen
         const impulse = [
             {
                 datum: "2026-06-01", 
@@ -335,36 +319,38 @@
                 zielUrl: "pfeife.html"
             },
             {
-                datum: "2026-06-26", 
+                datum: "2026-06-26", // Dritter Sonntag
                 titel: "Platzhalter",
                 vorschau: "Platzhalter",
                 zielUrl: "platzhalter.html"
             }
+            // Du kannst hier beliebig viele Sonntage nach dem gleichen Muster anfügen!
         ];
 
+        // 2. FUNKTION ZUM FINDEN DES AKTUELLEN IMPULSES
         function updateImpuls() {
             const heute = new Date();
-            
-            const j = heute.getFullYear();
-            const m = String(heute.getMonth() + 1).padStart(2, '0');
-            const t = String(heute.getDate()).padStart(2, '0');
-            const heuteString = `${j}-${m}-${t}`;
+            // Erzeuge ein "YYYY-MM-DD" Format aus der heutigen Server-/Gerätezeit
+            const heuteString = heute.toISOString().split('T')[0];
 
             let aktuellerImpuls = null;
 
+            // Wir suchen den neuesten Impuls, dessen Datum bereits erreicht oder vergangen ist
             for (let i = 0; i < impulse.length; i++) {
                 if (heuteString >= impulse[i].datum) {
                     aktuellerImpuls = impulse[i];
                 }
             }
 
+            // Fallback, falls noch kein Datum aus der Liste erreicht wurde (zeigt den ersten Eintrag an)
             if (!aktuellerImpuls && impulse.length > 0) {
                 aktuellerImpuls = impulse[0];
             }
 
+            // HTML Elemente befüllen
             if (aktuellerImpuls) {
-                const parts = aktuellerImpuls.datum.split('-');
-                const d = new Date(parts[0], parts[1] - 1, parts[2]);
+                // Datum schön formatieren (DD.MM.YYYY)
+                const d = new Date(aktuellerImpuls.datum);
                 const formatiertesDatum = d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
                 
                 document.getElementById('impulsDatum').innerText = "Sonntag, " + formatiertesDatum;
@@ -374,9 +360,10 @@
             }
         }
 
+        // Ausführen beim Laden der Seite
         updateImpuls();
 
-        // --- PWA / iOS Code --
+        // --- PWA / iOS Code (unverändert aus deinem Original) ---
         const installBtn = document.getElementById('installBtn');
         const iosHint = document.getElementById('iosHint');
         const iosHintClose = document.getElementById('iosHintClose');
@@ -422,7 +409,6 @@
         });
     })();
     </script>
-    
     <script src="register.js"></script>
 </body>
 </html>

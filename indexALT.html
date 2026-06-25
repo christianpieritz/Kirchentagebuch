@@ -6,12 +6,13 @@
     <title>PredigtMiniatur</title>
     
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#2F5496"> 
-    <link rel="apple-touch-icon" href="icon-192.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="PredigtMiniatur">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#2F5496"> 
+<!-- iOS-spezifisch: ohne diese Zeilen sieht "Zum Home-Bildschirm" auf dem iPhone schlechter aus -->
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="PredigtMiniatur">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+   <link rel="apple-touch-icon" href="icon-180.png">
     <link rel="icon" href="icon-192.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,6 +31,8 @@
             padding: 0;
         }
 
+
+
         body {
             background-color: var(--bg);
             color: var(--dark);
@@ -44,7 +47,7 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        h1, .cover p, .title, .text-red-caps, .text-red-allcaps, .share-btn, nav a, .impuls-title {
+        h1, .cover p, .title, .text-red-caps, .text-red-allcaps, .share-btn, nav a {
             font-family: 'Cinzel', serif;
             letter-spacing: 0.1em;
         }
@@ -66,49 +69,52 @@
             text-transform: uppercase;
         }
         
-        /* === DYNAMISCHER IMPULS BEREICH === */
-         .impuls-box {
-            width: 100%;
-            max-width: 420px; /* Kompakter gedeckelt */
-            background-color: var(--bg);  
-            border: 1px solid rgba(122, 92, 46, 0.3); /* Etwas deutlicherer Goldrand für Kontrast */
-            border-radius: 6px;
-            padding: 10px 10px; /* Kompakterer Innenabstand */
-            text-align: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-            margin: 0 auto;
+                /* ImpulsBereich */
+                h1, .cover p, .title, .text-red-caps, .text-red-allcaps, .share-btn, nav a, .impuls-title {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 0.1em;
         }
         
+           /* === DYNAMISCHER IMPULS BEREICH === */
+        .impuls-box {
+            width: 100%;
+            background-color: #ffffff;
+            border: 1px solid rgba(122, 92, 46, 0.2);
+            border-radius: 6px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
 
         .impuls-date {
-            font-size: 16px;
+            font-size: 14px;
             color: var(--gold);
             margin-bottom: 5px;
             font-weight: bold;
         }
 
         .impuls-title {
-            font-size: 17px; /* Minimal verkleinert */
-            color: #A42A04;
+            font-size: 18px;
+            color: #A42A04; /* Geändert für Kurztitel */
             font-weight: 700;
-            margin-bottom: 5px; /* Abstand reduziert */
+            margin-bottom: 15px;
             text-transform: uppercase;
         }
 
         .impuls-content {
-            font-size: 16px; /* Minimal verkleinert */
-            line-height: 1.5;
-            margin-bottom: 6px; /* Abstand reduziert */
+            font-size: 16.5px;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
 
         .impuls-link {
             display: inline-block;
-            background-color: #A42A04;
+            background-color: #A42A04; /* Geändert für Button-Hintergrund */
             color: var(--bg);
             text-decoration: none;
-            padding: 8px 20px; /* Button flacher gestaltet */
+            padding: 12px 25px;
             font-family: 'Cinzel', serif;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 700;
             text-transform: uppercase;
             border-radius: 4px;
@@ -118,6 +124,8 @@
         .impuls-link:active {
             background-color: #5E4622;
         }
+
+        
 
         /* Cover Bild mit Text-Overlay */
         .cover {
@@ -187,82 +195,89 @@
             grid-column: 1 / -1;
         }
         
-        /* APP BUTTON */
-        .install-inline {
-            display: none;
-            background: none;
-            border: none;
-            padding: 0;
-            margin: 0;
-            color: var(--gold);
-            font: inherit;
-            cursor: pointer;
-        }
-        .install-inline.visible {
-            display: inline;
-        }
+/* APP BUTTON */
+.install-inline {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: var(--gold);
+    font: inherit;
+    cursor: pointer;
+}
+.install-inline.visible {
+    display: inline;
+}
 
-        .ios-hint {
-            position: fixed;
-            inset: 0;
-            background: rgba(47, 79, 79, 0.45);
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            z-index: 1000;
-        }
-        .ios-hint[hidden] {
-            display: none;
-        }
-        .ios-hint-box {
-            background: var(--bg);
-            color: var(--dark);
-            width: 100%;
-            max-width: 430px;
-            padding: 24px 22px 28px;
-            border-radius: 18px 18px 0 0;
-            text-align: center;
-            font-size: 14.5px;
-            line-height: 1.65;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        .ios-hint-box strong {
-            color: var(--gold);
-        }
-        .ios-hint-box button {
-            margin-top: 16px;
-            background: var(--blue);
-            color: var(--bg);
-            border: none;
-            padding: 11px 26px;
-            border-radius: 999px;
-            font-family: 'Cinzel', serif;
-            font-size: 12px;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            cursor: pointer;
-        }
 
-        .nav-item.handgepaeck {
-            background-color: var(--dark);
-        }
+.ios-hint {
+    position: fixed;
+    inset: 0;
+    background: rgba(47, 79, 79, 0.45);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 1000;
+}
+.ios-hint[hidden] {
+    display: none;
+}
+.ios-hint-box {
+    background: var(--bg);
+    color: var(--dark);
+    width: 100%;
+    max-width: 430px;
+    padding: 24px 22px 28px;
+    border-radius: 18px 18px 0 0;
+    text-align: center;
+    font-size: 14.5px;
+    line-height: 1.65;
+    font-family: 'Times New Roman', Times, serif;
+}
+.ios-hint-box strong {
+    color: var(--gold);
+}
+.ios-hint-box button {
+    margin-top: 16px;
+    background: var(--blue);
+    color: var(--bg);
+    border: none;
+    padding: 11px 26px;
+    border-radius: 999px;
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
 
-        @media (max-width: 440px) {
-            .nav-grid {
-                grid-template-columns: 1fr;
-            }
-            .nav-item {
-                padding: 15px 20px;
-                font-size: 16px;
-            }
-        }
+/* APP BUTTON */
+
+
+/* Neu hinzufügen: */
+.nav-item.handgepaeck {
+    background-color: var(--dark); /* Nutzt dein vorhandenes #2F4F4F */
+}
+
+
+/* Schaltet bei allen Displays, die schmaler als 440 Pixel sind (z. B. iPhone 16e), auf 1 Spalte um */
+@media (max-width: 440px) {
+    .nav-grid {
+        grid-template-columns: 1fr;
+    }
+    .nav-item {
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+}
           
+
         footer img {
             max-width: 120px;
             height: auto;
             margin-top: 15px;
         }
-
     </style>
 </head>
 <body>
@@ -271,13 +286,11 @@
         
         <div class="cover">
             <img src="Cover.jpg" alt="Cover">
-            <p>Ein geistlicher StrandBegleiter und PredigtMiniaturen jeden Sonntag neu.</p>
-        </div>
-
+            <p>Ein geistlicher StrandBegleiter und PredigtMiniaturen für zu Haus.</p>
         <p class="intro">
-            Wenn Du in den Kaiserbädern unterwegs bist, klicke auf den jeweiligen Ort.  
-            <button id="installBtn" class="install-inline" type="button" hidden>(Auch als App für jeden Sonntag.)</button>
+            Wenn Du in den Kaiserbädern unterwegs bist, klicke auf den jeweiligen Ort.  <button id="installBtn" class="install-inline" type="button" hidden>(Auch als App für jeden Sonntag.)</button>
         </p>
+
 
         <div id="impulsBereich" class="impuls-box">
             <div id="impulsDatum" class="impuls-date">Bitte warten...</div>
@@ -296,17 +309,17 @@
             <a href="bernstein.html" class="nav-item">Bernstein</a>
             <a href="seebruecke.html" class="nav-item">Seebrücke</a>
             <a href="schiffe.html" class="nav-item">Schiffe</a>
-            <a href="glaubetogo.html" class="nav-item handgepaeck">Handgepäck</a>
+           <a href="glaubetogo.html" class="nav-item handgepaeck">Handgepäck</a>
    
             <a href="kontakt.html" class="nav-item impressum">Kontakt</a>
        </nav>
 
-        <footer>
-            <a href="pfeife.html" class="secret-link">
-                <img src="siegel.png" alt="Siegel">
-            </a> 
-        </footer>
+<footer>
+    <a href="pfeife.html" class="secret-link">
+        <img src="siegel.png" alt="Siegel">
+    </a> </footer>
     </div>
+
 
     <div id="iosHint" class="ios-hint" hidden>
         <div class="ios-hint-box">
@@ -320,7 +333,9 @@
     </div>
 
     <script>
-    (function () {
+   (function () {
+        // 1. DATENBANK FÜR DEINE SONNTAGE (Hier einfach erweitern/anpassen!)
+        // WICHTIG: Das Datum im Format "YYYY-MM-DD" eintragen
         const impulse = [
             {
                 datum: "2026-06-01", 
@@ -335,36 +350,38 @@
                 zielUrl: "pfeife.html"
             },
             {
-                datum: "2026-06-26", 
+                datum: "2026-06-26", // Dritter Sonntag
                 titel: "Platzhalter",
                 vorschau: "Platzhalter",
                 zielUrl: "platzhalter.html"
             }
+            // Du kannst hier beliebig viele Sonntage nach dem gleichen Muster anfügen!
         ];
 
+        // 2. FUNKTION ZUM FINDEN DES AKTUELLEN IMPULSES
         function updateImpuls() {
             const heute = new Date();
-            
-            const j = heute.getFullYear();
-            const m = String(heute.getMonth() + 1).padStart(2, '0');
-            const t = String(heute.getDate()).padStart(2, '0');
-            const heuteString = `${j}-${m}-${t}`;
+            // Erzeuge ein "YYYY-MM-DD" Format aus der heutigen Server-/Gerätezeit
+            const heuteString = heute.toISOString().split('T')[0];
 
             let aktuellerImpuls = null;
 
+            // Wir suchen den neuesten Impuls, dessen Datum bereits erreicht oder vergangen ist
             for (let i = 0; i < impulse.length; i++) {
                 if (heuteString >= impulse[i].datum) {
                     aktuellerImpuls = impulse[i];
                 }
             }
 
+            // Fallback, falls noch kein Datum aus der Liste erreicht wurde (zeigt den ersten Eintrag an)
             if (!aktuellerImpuls && impulse.length > 0) {
                 aktuellerImpuls = impulse[0];
             }
 
+            // HTML Elemente befüllen
             if (aktuellerImpuls) {
-                const parts = aktuellerImpuls.datum.split('-');
-                const d = new Date(parts[0], parts[1] - 1, parts[2]);
+                // Datum schön formatieren (DD.MM.YYYY)
+                const d = new Date(aktuellerImpuls.datum);
                 const formatiertesDatum = d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
                 
                 document.getElementById('impulsDatum').innerText = "Sonntag, " + formatiertesDatum;
@@ -374,9 +391,14 @@
             }
         }
 
+        // Ausführen beim Laden der Seite
         updateImpuls();
 
-        // --- PWA / iOS Code --
+
+
+
+        // --- PWA / iOS Code--
+
         const installBtn = document.getElementById('installBtn');
         const iosHint = document.getElementById('iosHint');
         const iosHintClose = document.getElementById('iosHintClose');
@@ -423,6 +445,11 @@
     })();
     </script>
     
+    
+    
     <script src="register.js"></script>
+
+
+
 </body>
 </html>
