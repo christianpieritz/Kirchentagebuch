@@ -323,22 +323,22 @@
     (function () {
         const impulse = [
             {
-                datum: "2026-06-01", 
-                titel: "Handgepäck·Glaube",
-                vorschau: "Glauben für die Hosentasche…",
-                zielUrl: "glaubetogo.html"
+                datum: "2026-01-01", 
+                titel: "Neujahr",
+                vorschau: "Beflügelt ins neue Jahr",
+                zielUrl: "sonntage/neujahr.html"
             },
             {
-                datum: "2026-06-25", 
+                datum: "2026-31-12", 
                 titel: "RaucherGlaube",
                 vorschau: "Darf man beim Beten rauchen?",
-                zielUrl: "pfeife.html"
+                zielUrl: "sonntage/pfeife.html"
             },
             {
                 datum: "2026-06-26", 
                 titel: "Platzhalter",
                 vorschau: "Platzhalter",
-                zielUrl: "platzhalter.html"
+                zielUrl: "sonntage/platzhalter.html"
             }
         ];
 
@@ -367,7 +367,7 @@
                 const d = new Date(parts[0], parts[1] - 1, parts[2]);
                 const formatiertesDatum = d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
                 
-                document.getElementById('impulsDatum').innerText = "Sonntag, " + formatiertesDatum;
+                document.getElementById('impulsDatum').innerText = "Sonn- / Feiertag, " + formatiertesDatum;
                 document.getElementById('impulsTitel').innerText = aktuellerImpuls.titel;
                 document.getElementById('impulsText').innerText = aktuellerImpuls.vorschau;
                 document.getElementById('impulsLink').href = aktuellerImpuls.zielUrl;

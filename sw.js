@@ -12,6 +12,11 @@ const PRECACHE_URLS = [
   "./kontakt.html",
    "./pfeife.html",
    "./platzhalter.html,
+      
+      
+  "./sonntage/neujahr.html,
+  "./sonntage/fluegel.png,
+  "./sonntage/neujahr.jpg",
 
   "./toback.jpg",
   "./Cover.jpg",
