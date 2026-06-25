@@ -11,9 +11,9 @@ const PRECACHE_URLS = [
   "./glaubetogo.html",
   "./kontakt.html",
    "./pfeife.html",
-   "./platzhalter.html,
+
       
-      
+  "./sonntage/platzhalter.html,      
   "./sonntage/neujahr.html,
   "./sonntage/fluegel.png,
   "./sonntage/neujahr.jpg",
